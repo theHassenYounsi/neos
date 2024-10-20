@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     gap: 20,
     padding: 20,
-    backgroundColor: "#007acc", // Replace with your primary color
+    backgroundColor: "#007acc",
     borderRadius: 12,
     overflow: "hidden",
   },

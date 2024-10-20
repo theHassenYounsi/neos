@@ -52,12 +52,12 @@ const ContactDetails = () => {
       </View>
 
       <View style={styles.detailRow}>
-        <FontAwesome name="phone" size={24} color="#007AFF" />
+        <FontAwesome name="phone" size={24} color="#078CC0" />
         <Text style={styles.detailText}>44444444</Text>
       </View>
 
       <View style={styles.detailRow}>
-        <FontAwesome name="envelope" size={24} color="#007AFF" />
+        <FontAwesome name="envelope" size={24} color="#078CC0" />
         <Text style={styles.detailText}>youssef.dhib@esprit.tn</Text>
       </View>
 
@@ -84,11 +84,12 @@ const ContactDetails = () => {
               autoCapitalize="none"
               inputMode="numeric"
             />
-            <Button
-              title="Confirm"
+            <TouchableOpacity
+              style={styles.messageButton}
               onPress={() => setModalVisible(false)}
-              accessibilityLabel="Confirm Color Selection"
-            />
+            >
+              <Text style={styles.messageButtonText}>Confirm</Text>
+            </TouchableOpacity>
           </View>
           <Padding
             action={() => setModalVisible(false)}
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: "#007AFF",
+    backgroundColor: "#078CC0",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   messageButton: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#078CC0",
     paddingVertical: 12,
     borderRadius: 10,
     alignItems: "center",
@@ -173,7 +174,7 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     borderWidth: 1,
     borderRadius: 5,
-    marginBottom: 16,
+    // marginBottom: 16,
     paddingHorizontal: 8,
   },
 });
