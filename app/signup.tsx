@@ -55,19 +55,19 @@ const index = () => {
       />
       <Button
         color={"#078CC0"}
-        title="Sign In"
+        title="Sign Up"
         onPress={() => {
           router.navigate("/tabs");
         }}
       />
       <View style={{ gap: 2 }}>
-        <Text style={styles.bottomText}>Don't have an account yet?</Text>
+        <Text style={styles.bottomText}>Already have an account ?</Text>
         <TouchableOpacity
           onPress={() => {
-            router.navigate("/signup");
+            router.navigate("/");
           }}
         >
-          <Text style={styles.linkText}>Create an account</Text>
+          <Text style={styles.linkText}>Log in here</Text>
         </TouchableOpacity>
       </View>
     </View>
