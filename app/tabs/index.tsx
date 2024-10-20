@@ -4,13 +4,12 @@ import HomeCardBig from "@/components/HomeBigCard";
 
 const index = () => {
   return (
-    <View>
+    <View style={{ paddingHorizontal: 10, paddingTop: 10 }}>
       <HomeCardBig
-        title={""}
-        date={""}
-        value={""}
-        currency={""}
-        units={""}
+        title={"Balence"}
+        date={"22/10/2023"}
+        value={"111"}
+        currency={"TND"}
       ></HomeCardBig>
     </View>
   );

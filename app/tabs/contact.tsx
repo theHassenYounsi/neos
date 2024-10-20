@@ -67,19 +67,40 @@ const contact = () => {
     "Rihab Brahim",
     "Marouene Ben Attia",
   ];
-  const Item = ({ names }: { names: string }) => (
-    <View style={{ paddingBottom: 5 }}>
-      <TouchableOpacity
-        onPress={() => {
-          router.navigate({ pathname: "/Profile", params: { name: names } });
+  const getInitials = (name: string) => {
+    const nameParts = name.split(" ");
+    const initials = nameParts
+      .map((part) => part.charAt(0).toUpperCase())
+      .slice(0, 2) // Get first two initials
+      .join(""); // Join initials without space
+    return initials;
+  };
+  const Item = ({ names }: { names: string }) => {
+    const initials = getInitials(names);
+    return (
+      <View
+        style={{
+          paddingBottom: 5,
+          flexDirection: "row",
+          // justifyContent: "center",
+          // alignItems: "center",
         }}
       >
-        <Text style={{ ...styles.itemText, fontSize: 16, paddingTop: 5 }}>
-          {names}
-        </Text>
-      </TouchableOpacity>
-    </View>
-  );
+        <TouchableOpacity
+          onPress={() => {
+            router.navigate({ pathname: "/Profile", params: { name: names } });
+          }}
+        >
+          <View style={styles.nameContainer}>
+            <View style={styles.initialsContainer}>
+              <Text style={styles.initialsText}>{getInitials(names)}</Text>
+            </View>
+            <Text style={styles.itemText}>{names}</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
   return (
     <View style={{ paddingHorizontal: 10, paddingTop: 5 }}>
       <FlatList
@@ -98,6 +119,26 @@ const contact = () => {
 const styles = StyleSheet.create({
   itemText: {
     color: "#333",
+    fontSize: 18,
+    fontWeight: "semibold",
+  },
+
+  nameContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  initialsContainer: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: "#078CC0",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  initialsText: {
+    color: "#fff",
+    fontWeight: "semibold",
   },
 });
 
