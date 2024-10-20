@@ -5,7 +5,7 @@ type Props = {
   date: string;
   value: number | string;
   currency: string;
-  units: number | string;
+  units?: number | string;
 };
 
 const HomeCardBig = ({
@@ -37,7 +37,7 @@ const HomeCardBig = ({
       <View style={styles.bottomContainer}>
         {/* the price container */}
         <View style={styles.priceContainer}>
-          <Text style={styles.iconPlaceholder}>$</Text>{" "}
+          <Text style={styles.iconPlaceholder}>$</Text>
           {/* Placeholder for DolarIcon */}
           <View style={styles.priceTextContainer}>
             <Text style={styles.intText}>
@@ -51,7 +51,7 @@ const HomeCardBig = ({
         </View>
         {/* units container */}
         <View style={styles.unitsContainer}>
-          <Text style={styles.iconPlaceholder}>🛒</Text>{" "}
+          <Text style={styles.iconPlaceholder}>???</Text>
           {/* Placeholder for CartIcon */}
           <Text style={styles.unitsText}>{units}</Text>
         </View>
