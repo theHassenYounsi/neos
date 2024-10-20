@@ -1,10 +1,17 @@
 import { View, Text } from "react-native";
 import React from "react";
+import HomeCardBig from "@/components/HomeBigCard";
 
 const index = () => {
   return (
     <View>
-      <Text>index</Text>
+      <HomeCardBig
+        title={""}
+        date={""}
+        value={""}
+        currency={""}
+        units={""}
+      ></HomeCardBig>
     </View>
   );
 };
