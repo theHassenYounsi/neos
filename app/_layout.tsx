@@ -12,6 +12,8 @@ import "react-native-reanimated";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Text, TouchableOpacity } from "react-native";
 import { useMyStore } from "@/store/store";
+import Toast from "react-native-toast-message";
+import { StatusBar } from "expo-status-bar";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,31 +34,21 @@ export default function RootLayout() {
 		return null;
 	}
 
-	const { setAuth } = useMyStore();
-
 	return (
 		<ThemeProvider value={colorScheme === "light" ? DarkTheme : DefaultTheme}>
 			<Stack
 				screenOptions={{
-					headerRight: () => {
-						return (
-							<TouchableOpacity
-								onPress={() => {
-									setAuth("unauth");
-									router.replace("/");
-								}}
-							>
-								<Text>logout</Text>
-							</TouchableOpacity>
-						);
-					},
+					headerTitleAlign: "center",
+					headerShown: false,
 				}}
 			>
 				{/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
-				<Stack.Screen name="index" options={{ headerShown: false }} />
-				<Stack.Screen name="signup" options={{ headerShown: false }} />
+				<Stack.Screen name="index" />
+				<Stack.Screen name="signup" />
 				<Stack.Screen name="+not-found" />
 			</Stack>
+			<Toast />
+			<StatusBar style="dark" />
 		</ThemeProvider>
 	);
 }

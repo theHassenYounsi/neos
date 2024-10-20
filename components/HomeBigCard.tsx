@@ -37,21 +37,19 @@ const HomeCardBig = ({
 			<View style={styles.bottomContainer}>
 				{/* the price container */}
 				<View style={styles.priceContainer}>
-					<Text style={styles.iconPlaceholder}>$</Text>
+					<Text style={styles.iconPlaceholder}></Text>
 					{/* Placeholder for DolarIcon */}
 					<View style={styles.priceTextContainer}>
 						<Text style={styles.intText}>
 							{getInt(Number(value)).toLocaleString()}
 						</Text>
-						<Text style={styles.decimalText}>
-							.{getDecimalString(Number(value), 2)}
-						</Text>
+
 						<Text style={styles.currencyText}>{currency}</Text>
 					</View>
 				</View>
 				{/* units container */}
 				<View style={styles.unitsContainer}>
-					<Text style={styles.iconPlaceholder}>🛒</Text>
+					<Text style={styles.iconPlaceholder}></Text>
 					{/* Placeholder for CartIcon */}
 					<Text style={styles.unitsText}>{units}</Text>
 				</View>
